@@ -7,9 +7,5 @@
     <div style="height: 90%; width: 100%">
       <Flashcard></Flashcard>
     </div>
-
-    <div style="height: 10%; width: 100%;" class="navbar">
-
-    </div>
   </div>
 </template>

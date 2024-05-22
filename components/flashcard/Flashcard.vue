@@ -3,10 +3,11 @@
     <div class="h-5/6 w-full flex flex-row relative">
       <div class="h-full w-full flex items-center justify-center">
         <div class="w-2/3 h-1/2">
-          <FlashcardCard></FlashcardCard>
+          <FlashcardCard @card-revealed="setShowWhenRepeat"></FlashcardCard>
         </div>
       </div>
 
+      <!-- Mock cards -->
       <div class="absolute left-1/4 transform -translate-x-full h-full w-full flex items-center justify-center opacity-50">
         <div class="w-2/3 h-1/3">
           <FlashcardCard></FlashcardCard>
@@ -20,7 +21,7 @@
       </div>
     </div>
 
-    <div class="h-16 w-2/3 mb-10">
+    <div v-if="showWhenRepeat" class="h-14 w-2/3">
       <FlashcardWhenRepeat/>
     </div>
   </div>
@@ -28,6 +29,11 @@
 
 <script lang="ts" setup>
 
+  const showWhenRepeat = ref(false)
+
+  const setShowWhenRepeat = () => {
+    showWhenRepeat.value = true
+  }
 </script>
 
 <style scoped>

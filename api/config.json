@@ -1,0 +1,25 @@
+{
+    "config": {
+        "flashcard": {
+            "card": {
+                "repeat": [
+                    {
+                        "id": 1,
+                        "label": "Easy",
+                        "class": "easy-repeat"
+                    },
+                    {
+                        "id": 2,
+                        "label": "Normal",
+                        "class": "normal-repeat"
+                    },
+                    {
+                        "id": 3,
+                        "label": "Hard",
+                        "class": "hard-repeat"
+                    }
+                ]
+            }
+        }
+    }
+}

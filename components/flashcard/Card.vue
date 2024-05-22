@@ -29,10 +29,13 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
+const emitter = defineEmits(["cardRevealed"])
+
 const isFlipped = ref(false);
 
 const flipCard = () => {
   isFlipped.value = !isFlipped.value;
+  emitter("cardRevealed", true)
 };
 </script>
 
@@ -72,7 +75,7 @@ const flipCard = () => {
 
 .circle {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   left: 10px;
   width: 10px;
   height: 10px;
