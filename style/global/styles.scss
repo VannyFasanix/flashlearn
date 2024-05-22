@@ -1,0 +1,8 @@
+html {
+    @apply bg-gray-100 #{!important};
+}
+
+.navbar {
+    @apply bg-gray-50 #{!important};
+    @apply border-t #{!important};
+}
