@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Roboto: true,
+      Montserrat: true,
     },
     prefetch: true,
     preload: true

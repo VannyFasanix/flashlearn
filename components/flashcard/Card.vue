@@ -3,11 +3,11 @@
     <div :class="['flashcard', { flipped: isFlipped }]">
       <div class="front">
         <div class="w-full h-full flex flex-col items-center justify-center border border-gray-200 rounded-lg shadow-md bg-gray-50">
-          <div class="h-4/6 w-full flex items-center justify-center">
-            <p class="text-base font-bold">img</p>
+          <div class="h-5/6 p-5 w-full flex items-center justify-center">
+            <p class="text-adaptive opacity-75"> Como se dice gracias en japones</p>
           </div>
-          <div class="h-2/6 w-full flex items-center justify-center">
-            <p class="font-thin">descr</p>
+          <div class="h-1/6 w-full flex items-center justify-center">
+            <p class="font-thin text-xs opacity-50">Tap to reveal</p>
           </div>
         </div>
       </div>
