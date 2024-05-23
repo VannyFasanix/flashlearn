@@ -1,23 +1,22 @@
 <template>
   <div class="flashcard-container" @click="flipCard">
-    <div :class="['flashcard', { flipped: isFlipped }]">
+    <div :class="['flashcard', { flipped: isFlipped, 'no-transition': noTransition }]">
       <div class="front">
         <div class="w-full h-full flex flex-col items-center justify-center border border-gray-200 rounded-lg shadow-md bg-gray-50">
-          <div class="h-5/6 p-5 w-full flex items-center justify-center">
-            <p class="text-adaptive opacity-75"> Como se dice gracias en japones</p>
+          <div class="h-full p-5 w-full flex flex-col gap-5 items-center justify-center">
+            <p class="text-md font-bold opacity-75">{{card?.text}}</p>
+            <p class="text-sm opacity-75">{{card?.subtext}}</p>
           </div>
-          <div class="h-1/6 w-full flex items-center justify-center">
+          <div class="absolute bottom-1 w-full flex items-center justify-center">
             <p class="font-thin text-xs opacity-50">Tap to reveal</p>
           </div>
         </div>
       </div>
       <div class="back">
         <div class="w-full h-full flex flex-col items-center justify-center border border-gray-200 rounded-lg shadow-md bg-gray-50 relative">
-          <div class="h-4/6 w-full flex items-center justify-center">
-            <p class="text-base font-bold">Back img</p>
-          </div>
-          <div class="h-2/6 w-full flex items-center justify-center">
-            <p class="font-thin">Back descr</p>
+          <div class="h-full w-full flex flex-col gap-5 items-center justify-center">
+            <p class="text-md font-bold opacity-75">{{card?.back}}</p>
+            <p class="text-sm opacity-75">{{card?.subback}}</p>
           </div>
           <div class="circle"></div>
         </div>
@@ -27,15 +26,31 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, onUpdated } from 'vue';
 
-const emitter = defineEmits(["cardRevealed"])
+const props = defineProps(['card', 'cardIndex']);
+const emitter = defineEmits(["cardRevealed"]);
 
 const isFlipped = ref(false);
+const currentIndex = ref(props.cardIndex);
+const noTransition = ref(false);
+
+onUpdated(() => {
+  if (currentIndex.value !== props.cardIndex) {
+    isFlipped.value = false;
+    noTransition.value = true; // Rimuove la transizione
+    currentIndex.value = props.cardIndex;
+
+    // Forza il re-rendering della carta senza transizione
+    setTimeout(() => {
+      noTransition.value = false; // Ripristina la transizione
+    }, 50);
+  }
+});
 
 const flipCard = () => {
   isFlipped.value = !isFlipped.value;
-  emitter("cardRevealed", true)
+  emitter("cardRevealed", true);
 };
 </script>
 
@@ -52,6 +67,10 @@ const flipCard = () => {
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
+}
+
+.flashcard.no-transition {
+  transition: none;
 }
 
 .flashcard.flipped {

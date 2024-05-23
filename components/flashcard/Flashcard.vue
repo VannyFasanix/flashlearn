@@ -1,49 +1,76 @@
 <template>
   <div class="h-full max-h-full w-full flex flex-col justify-between items-center overflow-hidden relative">
 
-    <div class="w-full h-1/6 flex justify-center items-center gap-3">
-      <div class="h-8 w-2/3 bg-blue-800 rounded-xl shadow-md">
-      </div>
-      <p class="text-xs">0/{{deck.length}}</p>
+    <div class="w-2/3 h-1/6 flex flex-col justify-center items-start gap-1">
+      <FlashcardProgressBar :deck="deck" :completed-cards="completedCards" :completion-percentage="completionPercentage"></FlashcardProgressBar>
     </div>
 
-    <div class="h-5/6 w-full flex flex-row relative">
+    <div v-if="cardIndex < deck.length" class="h-5/6 w-full flex flex-row relative">
+
+      <!-- Mock card -->
+      <div v-if="deck[cardIndex-1]" class="absolute left-1/4 transform -translate-x-full h-full w-full flex items-center justify-center opacity-50">
+        <div class="w-2/3 h-1/3">
+          <FlashcardCard></FlashcardCard>
+        </div>
+      </div>
+
+      <!-- Main card -->
       <div class="h-full w-full flex items-center justify-center">
         <div class="w-2/3 h-1/2">
-          <FlashcardCard @card-revealed="setShowWhenRepeat"></FlashcardCard>
+          <FlashcardCard :card="deck[cardIndex]" :cardIndex="cardIndex" @card-revealed="setShowWhenRepeat"></FlashcardCard>
         </div>
       </div>
 
-      <!-- Mock cards -->
-      <div class="absolute left-1/4 transform -translate-x-full h-full w-full flex items-center justify-center opacity-50">
+      <!-- Mock card -->
+      <div v-if="deck[cardIndex+1]" class="absolute right-1/4 transform translate-x-full h-full w-full flex items-center justify-center opacity-50">
         <div class="w-2/3 h-1/3">
           <FlashcardCard></FlashcardCard>
         </div>
       </div>
 
-      <div class="absolute right-1/4 transform translate-x-full h-full w-full flex items-center justify-center opacity-50">
-        <div class="w-2/3 h-1/3">
-          <FlashcardCard></FlashcardCard>
-        </div>
-      </div>
     </div>
 
-    <div v-if="showWhenRepeat" class="h-14 w-2/3">
-      <FlashcardWhenRepeat/>
+    <div v-else class="h-5/6 w-full flex justify-center items-center">Complimenti!</div> 
+
+    <div class="h-14 w-2/3" :class="{ 'absolute bottom-0': showWhenRepeat }">
+      <FlashcardWhenRepeat v-if="showWhenRepeat" @difficulty-defined="setDifficultyAndProceed" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue';
+import { deck } from "../../api/mock.json";
 
-  import { deck } from "../../api/mock.json"
+const showWhenRepeat = ref(false);
+const completedCards = ref(0);
+const cardIndex = ref(0)
 
-  const showWhenRepeat = ref(false)
+const setShowWhenRepeat: any = () => {
 
-  const setShowWhenRepeat = () => {
-    showWhenRepeat.value = true
-  }
+  if(showWhenRepeat.value)
+    return
+
+  showWhenRepeat.value = true;
+  if(completedCards.value < deck.length)
+    completedCards.value++;
+};
+
+const setDifficultyAndProceed = (difficulty: number) => {
+
+  //DEFINE DIFFICULTY ALGORITHM
+
+  showWhenRepeat.value = false
+  cardIndex.value++
+}
+
+const completionPercentage: ComputedRef<number> = computed(() => {
+  return (completedCards.value / deck.length) * 100;
+});
 </script>
 
 <style scoped>
+.h-14 {
+  position: relative;
+}
 </style>

@@ -1,16 +1,31 @@
 {
   "deck": [
     {
-      "text": "Miao1"
+      "text": "Miao1",
+      "subtext": "miaomioamioamio",
+      "back": "Il verso del micio 1",
+      "subback": "Subeme la radio..."
     },
     {
-      "text": "Miao2"
+      "text": "Miao2",
+      "subtext": "miaomioamioamio",
+      "back": "Il verso del micio 222",
+      "subback": "Subeme la radio..."
     },    {
-      "text": "Miao3"
+      "text": "Miao3",
+      "subtext": "miaomioamioamio",
+      "back": "Il verso del micio 33",
+      "subback": "Subeme la radio..."
     },    {
-      "text": "Miao4"
+      "text": "Miao4",
+      "subtext": "miaomioamioamio",
+      "back": "Il verso del micio 444",
+      "subback": "Subeme la radio..."
     },    {
-      "text": "Miao5"
+      "text": "Miao5",
+      "subtext": "miaomioamioamio",
+      "back": "Il verso del micio 55",
+      "subback": "Subeme la radio..."
     }
   ]
 }

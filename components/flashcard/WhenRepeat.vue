@@ -3,7 +3,8 @@
     <div class="w-full h-full shadow-lg" v-for="(repeat, i) in config.flashcard.card.repeat">
       <div :class="{[repeat.class]: true, 'rounded-l-xl': i == 0, 
                     'rounded-r-xl': i == config.flashcard.card.repeat?.length-1 }" 
-            class="w-full h-full flex justify-center items-center">
+            class="w-full h-full flex justify-center items-center"
+            @click="defineDifficulty(repeat.id)">
         <p class="text-gray-100 font-bold text-sm">{{repeat.label}}</p>
       </div>
     </div>
@@ -12,6 +13,13 @@
 
 <script lang="ts" setup>
   import { config } from "../../api/config.json"
+
+  const emitter = defineEmits(['difficultyDefined'])
+
+  const defineDifficulty = (id: number) => {
+    emitter('difficultyDefined', id)
+  }
+  
 </script>
 
 <style>
