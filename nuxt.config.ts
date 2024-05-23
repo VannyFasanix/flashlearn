@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.js
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
@@ -12,13 +12,23 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxtjs/google-fonts"],
+  modules: [
+    '@nuxtjs/google-fonts',
+    'nuxt-icon'
+  ],
 
   googleFonts: {
     families: {
-      Montserrat: true,
+      Mali: {
+        wght: [400, 600, 700],
+      },
     },
-    prefetch: true,
-    preload: true
+    subsets: ['latin'],
+    display: 'swap',
+    prefetch: false,
+    preconnect: false,
+    preload: false,
+    download: true,
+    base64: false,
   }
-})
+});

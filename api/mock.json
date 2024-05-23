@@ -1,33 +1,74 @@
 {
-  "deck": {
-    "title": "Il mazzo dei mici",
-    "cards": [
+  "decks": [
     {
-      "text": "Miao1",
-      "subtext": "miaomioamioamio",
-      "back": "Il verso del micio 1",
-      "subback": "Subeme la radio..."
+      "title": "Il mazzo dei mici",
+      "cards": [
+        {
+          "text": "Miao1",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 1",
+          "subback": "Subeme la radio..."
+        },
+        {
+          "text": "Miao2",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 222",
+          "subback": "Subeme la radio..."
+        },
+        {
+          "text": "Miao3",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 33",
+          "subback": "Subeme la radio..."
+        },
+        {
+          "text": "Miao4",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 444",
+          "subback": "Subeme la radio..."
+        },
+        {
+          "text": "Miao5",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 55",
+          "subback": "Subeme la radio..."
+        }
+      ]
     },
     {
-      "text": "Miao2",
-      "subtext": "miaomioamioamio",
-      "back": "Il verso del micio 222",
-      "subback": "Subeme la radio..."
-    },    {
-      "text": "Miao3",
-      "subtext": "miaomioamioamio",
-      "back": "Il verso del micio 33",
-      "subback": "Subeme la radio..."
-    },    {
-      "text": "Miao4",
-      "subtext": "miaomioamioamio",
-      "back": "Il verso del micio 444",
-      "subback": "Subeme la radio..."
-    },    {
-      "text": "Miao5",
-      "subtext": "miaomioamioamio",
-      "back": "Il verso del micio 55",
-      "subback": "Subeme la radio..."
+      "title": "Nihongo con teppei",
+      "cards": [
+        {
+          "text": "Nihongo",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 1",
+          "subback": "Subeme la radio..."
+        },
+        {
+          "text": "Teppei",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 222",
+          "subback": "Subeme la radio..."
+        },
+        {
+          "text": "Teppei3",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 33",
+          "subback": "Subeme la radio..."
+        },
+        {
+          "text": "Teppei34",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 444",
+          "subback": "Subeme la radio..."
+        },
+        {
+          "text": "Teppei213",
+          "subtext": "miaomioamioamio",
+          "back": "Il verso del micio 55",
+          "subback": "Subeme la radio..."
+        }
+      ]
     }
-  ]}
+  ]
 }
