@@ -4,7 +4,7 @@
             <div class="h-full bg-blue-800 rounded-l-xl" :class="{'rounded-r-xl': completionPercentage == 100}"  :style="{ width: `${completionPercentage}%` }">
             </div>
         </div>
-        <p class="text-xs">{{completedCards + "/" + deck.length}}</p>
+        <p class="text-xs">{{completedCards + "/" + deck.cards.length}}</p>
     </div>
 </template>
 

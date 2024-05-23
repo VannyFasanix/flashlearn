@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full flex flex-row items-center justify-center">
-    <div class="w-full h-full shadow-lg" v-for="(repeat, i) in config.flashcard.card.repeat">
+    <div class="w-full h-full rounded-xl shadow-lg" v-for="(repeat, i) in config.flashcard.card.repeat">
       <div :class="{[repeat.class]: true, 'rounded-l-xl': i == 0, 
                     'rounded-r-xl': i == config.flashcard.card.repeat?.length-1 }" 
             class="w-full h-full flex justify-center items-center"

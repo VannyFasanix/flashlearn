@@ -1,5 +1,7 @@
 {
-  "deck": [
+  "deck": {
+    "title": "Il mazzo dei mici",
+    "cards": [
     {
       "text": "Miao1",
       "subtext": "miaomioamioamio",
@@ -27,5 +29,5 @@
       "back": "Il verso del micio 55",
       "subback": "Subeme la radio..."
     }
-  ]
+  ]}
 }
