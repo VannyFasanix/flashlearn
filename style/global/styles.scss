@@ -2,6 +2,10 @@ html {
     @apply bg-blue-100 #{!important};
 }
 
+:root {
+    font-family: "Montserrat", serif;
+}
+
 .navbar {
     @apply bg-gray-50 #{!important};
     @apply border-t #{!important};

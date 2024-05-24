@@ -19,8 +19,8 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Mali: {
-        wght: [400, 600, 700],
+      Montserrat: {
+        wght: [100, 200, 300, 400, 600, 700, 800, 900],
       },
     },
     subsets: ['latin'],
