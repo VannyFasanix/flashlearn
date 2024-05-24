@@ -1,21 +1,16 @@
 <template>
-  <div class="h-full w-full">
-    <div v-if="selectedDeck" class="h-full w-full">
-      <div class="w-full" style="height: 10%;">
-        <BarMobileNavbar :deck="selectedDeck"></BarMobileNavbar>
-      </div>
-      <div class="w-full" style="height: 90%;">
-        <Flashcard :deck="selectedDeck"></Flashcard>
-      </div>
+  <div class="h-full w-full flex flex-col md:flex-row">
+    <div class="w-full block md:hidden" style="height: 10%;">
+      <BarMobileNavbar :deck="selectedDeck"></BarMobileNavbar>
     </div>
-
-    <div v-else class="h-full w-full flex flex-col justify-center">
-      <div class="w-full" style="height: 10%;">
-        <BarMobileNavbar></BarMobileNavbar>
-      </div>
-      <div class="w-full" style="height: 90%;">
-        <DeckList :decks="_decks" @deck-selected="(deck: any) => selectedDeck = deck"></DeckList>
-      </div>
+    <div class="w-1/6 h-full hidden md:block">
+      <BarSidebar deck="selectedDeck"></BarSidebar>
+    </div>
+    <div v-if="!selectedDeck" class="w-full md:w-5/6" style="height: 90%;">
+      <DeckList :decks="_decks" @deck-selected="(deck: any) => selectedDeck = deck"></DeckList>
+    </div>
+    <div v-else class="w-full md:w-5/6" style="height: 90%;">
+      <Flashcard :deck="selectedDeck"></Flashcard>
     </div>
   </div>
 </template>
