@@ -3,10 +3,10 @@
     <div class="w-full block md:hidden" style="height: 10%;">
       <BarMobileNavbar :deck="selectedDeck"></BarMobileNavbar>
     </div>
-    <div class="w-1/6 h-full hidden md:block">
-      <BarSidebar deck="selectedDeck"></BarSidebar>
+    <div class="w-1/6 h-full hidden md:block overflow-y-auto">
+      <BarSidebar :deck="selectedDeck"></BarSidebar>
     </div>
-    <div v-if="!selectedDeck" class="w-full md:w-5/6" style="height: 90%;">
+    <div v-if="!selectedDeck" class="w-full md:w-5/6 overflow-y-auto h-full">
       <DeckList :decks="_decks" @deck-selected="(deck: any) => selectedDeck = deck"></DeckList>
     </div>
     <div v-else class="w-full md:w-5/6" style="height: 90%;">

@@ -2,6 +2,8 @@
   "decks": [
     {
       "title": "Il mazzo dei mici",
+      "subtitle": "Mazzo fatto apposta per i gatti belli",
+      "image": "mock-pic.png",
       "cards": [
         {
           "text": "Miao1",
@@ -37,6 +39,8 @@
     },
     {
       "title": "Nihongo con teppei",
+      "subtitle": "日本語 con Teppei を出身して！",
+      "image": "teppei.jpg",
       "cards": [
         {
           "text": "Nihongo",
