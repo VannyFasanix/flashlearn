@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex flex-col items-center justify-between p-5 bg-white border-r shadow-md">
+  <div class="h-full flex flex-col items-center justify-between p-5 bg-white border-r shadow-xl" style="width: 99%;">
     <!-- TITLE -->
     <p class="text-xl font-bold text-blue-800">Flashlearn</p>
 
