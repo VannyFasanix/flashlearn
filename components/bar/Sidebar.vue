@@ -28,13 +28,14 @@
 </script>
 
 <style>
-  .settings .menu-item {
+  .menu-item {
     @apply text-lg;
     @apply text-blue-800;
     @apply font-semibold;
+    @apply transition;
+    @apply duration-300;
 
     &:hover {
-      @apply font-bold;
       @apply text-blue-500;
       @apply cursor-pointer;
     }

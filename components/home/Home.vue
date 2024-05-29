@@ -7,7 +7,7 @@
       <BarSidebar :deck="selectedDeck"></BarSidebar>
     </div>
     <div v-if="!selectedDeck" class="w-full md:w-5/6 overflow-y-auto h-full">
-      <DeckList :decks="_decks" @deck-selected="(deck: any) => selectedDeck = deck"></DeckList>
+      <DeckList :decks="_decks" :title="'Your decks'" @deck-selected="(deck: any) => selectedDeck = deck"></DeckList>
     </div>
     <div v-else class="w-full md:w-5/6" style="height: 90%;">
       <Flashcard :deck="selectedDeck"></Flashcard>

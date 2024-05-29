@@ -12,10 +12,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    '@nuxtjs/google-fonts',
-    'nuxt-icon'
-  ],
+  modules: ['@nuxtjs/google-fonts', 'nuxt-icon', "@nuxt/ui"],
 
   googleFonts: {
     families: {
