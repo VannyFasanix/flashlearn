@@ -1,6 +1,7 @@
 {
   "decks": [
     {
+      "id": 1,
       "title": "Il mazzo dei mici",
       "subtitle": "Mazzo fatto apposta per i gatti belli",
       "image": "morgan.png",
@@ -38,6 +39,7 @@
       ]
     },
     {
+      "id": 2,
       "title": "Nihongo con teppei",
       "subtitle": "日本語 con Teppei を出身して！",
       "image": "teppei.jpg",

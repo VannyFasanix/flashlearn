@@ -14,3 +14,9 @@ html {
 // p {
 //     @apply text-blue-900;
 // }
+
+input {
+    @apply border-2;
+    @apply border-blue-500;
+    @apply rounded-md
+}

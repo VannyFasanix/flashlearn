@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  routeRules: {
+    '/': { prerender: true }
+  },
+
   css: ['~/style/tailwind/tailwind.css',
         '~/style/global/styles.scss'],
 

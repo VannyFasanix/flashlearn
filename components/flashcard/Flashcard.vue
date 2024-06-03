@@ -57,6 +57,9 @@ const setShowWhenRepeat: any = () => {
   showWhenRepeat.value = true;
   if(completedCards.value < props.deck.cards.length)
     completedCards.value++;
+
+  if(completedCards.value == props.deck.cards.length) 
+    setTimeout(() => navigateTo('/'), 2000) 
 };
 
 const setDifficultyAndProceed = (difficulty: number) => {
